@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  color: rgb(200, 200, 200);
+  font-family: "Roboto", sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(20, 20, 20);
+}
+
+.gap {
+  height: 5em;
+}
+
+/** Slide CSS **/
+.slide {
+  width: 75vw;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background: var(--secondary-accent);
+}
+.slide-header {
+  font-size: 4em;
+  color: var(--primary-accent);
+  text-transform: uppercase;
+}
+img.slide-photo {
+  height: 14em;
+  border-radius: 7em;
+}
+.warning {
+  color: rgb(200, 50, 50);
+  position: fixed;
+  height: 100px;
+}
+button {
+  width: 100%;
+}

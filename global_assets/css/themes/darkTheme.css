@@ -1,0 +1,8 @@
+:root {
+  --primary-color: rgb(200, 200, 200);
+  --primary-background: rgb(20, 20, 20);
+
+  /** Accent Colours **/
+  --primary-accent: #f14444;
+  --secondary-accent: rgb(32, 32, 32);
+}

@@ -11,24 +11,81 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  <div class="gap"></div>
+  <!--
+
+    <div class="warning">
+      <div class="warning-text">UNDER CONSTRUCTION</div>
+      <button onclick="document.body.removeChild(document.querySelector('.warning'))">Ok.</button>
+    </div>
+  -->
+  
   <!-- "header slide", not "slide header" -->
-  <div class="warning">
-    <div class="warning-text">UNDER CONSTRUCTION</div>
-    <button onclick="document.querySelector('.warning').innerHTML=''">Ok.</button>
-  </div>
   <div class="slide" id="header-slide">
     <div class="slide-text">
       <div class="slide-header">Hello There!</div>
       <div class="slide-body">I am Hamza Alsarakbi, I chose the Tech Design course because I like designing websites, 
-        3D designs, and 2D designs. Take a looka around my website, I will add more stuff as I 
+        3D designs, and 2D designs. Take a look around my website. I will add more stuff as I 
         progress through this course.</div>
+    </div> 
+    <!--
+
+      <div class="slide-photo">
+        <img class="slide-photo" id="tech-design-photo" src="global_assets/img/techdesign.png">
+        <div div class="slide-photo-alt" id="tech-design-photo-alt">Tech Design</div> 
+      </div>
+    -->
+
+  </div>
+  <div class="content">
+    <div class="sticky-content">
+      <div class="table-header">Table of Content</div>
+      <div class="table" id="table-content">
+        <div class="row">
+          <div class="cell" id="unit-header">Units</div>
+        </div>
+        <div class="row" id="row-1">
+          <a class="cell" id="unit-1" href="#unit-1-card">Unit 1</a>
+        </div>
+        <div class="row" id="row-2">
+          <a class="cell" id="unit-2" href="#unit-2-card">Unit 2</a>
+        </div>
+        <div class="row" id="row-3">
+          <a class="cell" id="unit-3" href="#unit-3-card">Unit 3</a>
+        </div>
+        <div class="row" id="row-4">
+          <a class="cell" id="unit-4" href="#unit-4-card">Unit 4</a>
+        </div>
+      </div>
     </div>
-    <div class="slide-photo">
-      <img class="slide-photo" id="tech-design-photo" src="global_assets/img/techdesign.png">
-      
+    <div class="cards">
+      <div class="card" id="unit-1-card">
+        <div class="card-header">Unit 1: Tech Design</div>
+        <div class="card-subheader" href="units/unit-1/hotlinebling/hotlineBling.html">Assignment 1: Hotline Bling</div>
+        <div class="card-body">Create a phone accessory.</div>
+      </div>
+      <div class="card" id="unit-2-card">
+        <div class="card-header">Unit 2</div>
+        <div class="card-body">Coming soon.</div>
+      </div>
+      <div class="card" id="unit-3-card">
+        <div class="card-header">Unit 3</div>
+        <div class="card-body">Coming soon.</div>
+      </div>
+      <div class="card" id="unit-4-card">
+        <div class="card-header">Unit 4</div>
+        <div class="card-body">Coming soon.</div>
+      </div>
+      </div>
     </div>
   </div>
+    
+    <div class="slide" id="footer-slide">
+      <div class="slide-text" id="slide-text-footer">
+        <div class="slide-header">Woah! You've made it this far?</div>
+          <div class="slide-body">Thank you for checking out my website!</div>
+
+        </div>
+      </div>
   <slide class="body"></slide>
 </body>
 </html>

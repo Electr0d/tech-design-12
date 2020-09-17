@@ -1,0 +1,31 @@
+.slide-photo#about {
+	background: url('../img/slides/damascus.jpg');
+}
+.slide-photo#syria {
+	background: url('../img/slides/syria.jpg');
+}
+.slide-photo#family {
+	background: url('../img/slides/family.jpg');
+}
+.slide-photo#school {
+	background: url('../img/slides/school.jpg');
+}
+.slide-photo#code {
+	background: url('../img/slides/code.png');
+}
+.slide-photo#design {
+	background: url('../img/slides/design.png');
+}
+.slide-photo#three-d-design {
+	background: url('../img/slides/3d-design.png');
+}
+.slide-photo#two-d-design {
+	background: url('../img/slides/2d-design.png');
+}
+.slide-photo#animation {
+	background: url('../img/slides/animation.gif');
+}
+.slide-text#two-d-design,
+.slide-text#design {
+	backdrop-filter: brightness(0.5);
+}

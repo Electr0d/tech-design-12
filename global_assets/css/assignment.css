@@ -110,3 +110,50 @@ button:active {
 	padding: 1em;
 	height: 5em;
 }
+
+.line {
+	width: 80%;
+	height: 0.5em;
+	background: linear-gradient(90deg, rgba(35, 23, 247, 1) 0%, rgba(255, 0, 108, 1) 100%);
+	transform: scaleX(0);
+	animation: line-draw-in 0.4s ease-out;
+	animation-fill-mode: forwards;
+	transform-origin: 0% 50%;
+	margin-top: 10px;
+	border-radius: 0.5em;
+	animation-delay: 0.7s;
+}
+
+@keyframes line-draw-in {
+	to {
+		transform: scaleX(1);
+	}
+}
+.assignment-content {
+	display: flex;
+	flex-direction: column;
+	padding: 1em;
+}
+.question {
+	margin-top: 2em;
+	padding: 1em;
+	opacity: 0;
+	transform: translateX(-20%);
+	filter: grayscale(1);
+}
+.prompt {
+	font-size: 2.2em;
+	color: var(--primary-accent);
+	margin: 2em 0 0.5em 0;
+}
+.answer {
+	text-indent: 3em;
+	font-size: 1.2em;
+	line-height: 175%;
+}
+
+.question-draw-in {
+	opacity: 1 !important;
+	transform: translateX(0%) !important;
+	filter: grayscale(0) !important;
+}

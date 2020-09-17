@@ -11,4 +11,4 @@ function questionDrawIn() {
 
 setTimeout(function() {
 	if (questionsListed < contentLength) questionDrawIn();
-}, 1500);
+}, 1200);

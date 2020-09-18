@@ -72,10 +72,9 @@ body {
 	font-size: 5em;
 	color: var(--primary-accent);
 	text-shadow: -3px 3px 5px var(--primary-shadow);
-	padding: 0.5em;
-	backdrop-filter: brightness(0.5);
-	border-radius: 0.5em;
-	margin-left: 1em;
+	padding: 0.5em 1.5em 0.5em 1.5em;
+	width: calc(100% - 3em);
+	backdrop-filter: brightness(0.8);
 }
 .picture-about {
 	margin: 1em 1em 0 1em;

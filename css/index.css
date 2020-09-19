@@ -189,6 +189,4 @@ a:hover:not(.cell) {
 .card-section:hover {
 	backdrop-filter: brightness(0.8);
 }
-.table {
-	
-}
+

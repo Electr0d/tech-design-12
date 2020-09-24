@@ -79,6 +79,7 @@ body {
 }
 .picture-about {
 	margin: 1em 1em 0 1em;
+	font-weight: bold;
 }
 .picture-about,
 .picture-credits {

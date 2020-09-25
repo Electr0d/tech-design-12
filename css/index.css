@@ -112,7 +112,7 @@ img.slide-photo {
 	font-size: 2em;
 	font-weight: bold;
 	border-bottom: 1px solid var(--primary-accent);
-	border-radius: 5px;
+	border-radius: 20px 20px 5px 5px;
 	text-transform: uppercase;
 	color: var(--primary-accent);
 	backdrop-filter: brightness(0.8);
@@ -156,7 +156,7 @@ img.slide-photo {
 	transform: translateX(-2%);
 }
 .card-header {
-	font-size: 4em;
+	font-size: 3em;
 	color: var(--primary-accent);
 	text-transform: uppercase;
 	padding: 1em 1em 0.2em 1em;
@@ -165,10 +165,10 @@ img.slide-photo {
 	backdrop-filter: brightness(0.7);
 	margin-bottom: 0.5em;
 	border-bottom: 1px solid var(--primary-accent);
-	border-radius: 5px;
+	border-radius: 22px 22px 5px 5px;
 }
 .card-subheader {
-	font-size: 2em;
+	font-size: 1.7em;
 	color: var(--primary-accent);
 	margin: 0.2em 0 0.2em 0.5em;
 	padding: 0 2em 0 2em;

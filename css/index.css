@@ -155,6 +155,9 @@ img.slide-photo {
 	background: rgb(45, 45, 45);
 	transform: translateX(-2%);
 }
+.card:last-child {
+	border-radius: 0 0 22px 22px;
+}
 .card-header {
 	font-size: 3em;
 	color: var(--primary-accent);

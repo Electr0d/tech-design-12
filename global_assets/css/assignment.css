@@ -149,6 +149,11 @@ button:active {
 	color: var(--primary-accent);
 	margin: 2em 0 0.5em 0;
 }
+.header {
+	font-size: 1.7em;
+	color: var(--tertiary-accent);
+	margin: 2em 0 0.5em 0;
+}
 .answer {
 	text-indent: 3em;
 	font-size: 1.2em;
@@ -178,6 +183,7 @@ button:active {
 }
 .comment {
 }
+
 /** table **/
 .table {
 	display: flex;

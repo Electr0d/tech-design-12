@@ -5,6 +5,13 @@
 	color: rgb(200, 200, 200);
 	font-family: "Roboto", sans-serif;
 	transition: 0.2s ease-out;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
 }
 html {
 	scroll-behavior: smooth;
@@ -177,9 +184,11 @@ button:active {
 }
 
 .embedded-image {
-	width: 80%;
+	width: 95%;
 	margin: 1em;
 	border-radius: 1em;
+	min-width: 5em;
+	max-width: 40em;
 }
 .comment {
 }
@@ -220,4 +229,15 @@ button:active {
 }
 .criteria-table .row .cell#comments:not(.cell-header) {
 	text-align: left;
+}
+@media only screen and (max-width: 850px) {
+	.assignment {
+		font-size: 3em;
+	}
+	.prompt {
+		font-size: 1.7em;
+	}
+	.answer {
+		font-size: 1em;
+	}
 }

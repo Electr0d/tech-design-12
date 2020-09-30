@@ -12,3 +12,12 @@ function questionDrawIn() {
 setTimeout(function() {
 	if (questionsListed < contentLength) questionDrawIn();
 }, 1200);
+
+// Bullet poitns counter
+if (document.querySelectorAll('li').length != 0) {
+	let liLength = document.createElement('div');
+	liLength.setAttribute('class', 'li-length');
+	liLength.setAttribute('id', 'li-length-all');
+	liLength.textContent = 'Bullet points count: ' + document.querySelectorAll('li').length;
+	document.querySelector('.assignment-content').appendChild(liLength);
+}

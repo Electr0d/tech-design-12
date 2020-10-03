@@ -14,10 +14,16 @@ setTimeout(function() {
 }, 1200);
 
 // Bullet poitns counter
-if (document.querySelectorAll('li').length != 0) {
+if (document.querySelectorAll('li').length != 0 && document.title.toLowerCase().includes('criteria')) {
 	let liLength = document.createElement('div');
 	liLength.setAttribute('class', 'li-length');
 	liLength.setAttribute('id', 'li-length-all');
 	liLength.textContent = 'Bullet points count: ' + document.querySelectorAll('li').length;
 	document.querySelector('.assignment-content').appendChild(liLength);
+}
+
+// enlarge image onclick
+function imageZoomToggle(e, zoomed) {
+	let ref = e.href;
+	console.log(ref);
 }

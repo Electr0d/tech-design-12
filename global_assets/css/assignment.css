@@ -4,13 +4,8 @@
 	outline: none;
 	color: rgb(200, 200, 200);
 	font-family: "Roboto", sans-serif;
-	transition: 0.2s ease-out;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+	transition: all 0.2s ease-out;
+	transition-property: transform, opacity, filter;
 	-webkit-tap-highlight-color: transparent;
 }
 html {
@@ -153,7 +148,7 @@ button:active {
 }
 .prompt {
 	font-size: 2.2em;
-	color: var(--primary-accent);
+	color: var(--tertiary-accent);
 	margin: 2em 0 0.5em 0;
 }
 .header {
@@ -176,23 +171,65 @@ button:active {
 }
 
 /** image embed **/
-.image-embed {
+.image-embed-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding: 1em;
 }
 
+.image-embed {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	width: 100%;
+}
+
 .embedded-image {
-	width: 95%;
 	margin: 1em;
 	border-radius: 1em;
+	cursor: pointer;
+}
+/*
+.embedded-image:not(iframe):hover {
+	filter: brightness(0.8) blur(2px);
+}
+.embedded-image:hover ~ .hint {
+	opacity: 1;
+}
+*/
+.embedded-image,
+.comment {
+	width: 95%;
 	min-width: 5em;
 	max-width: 40em;
 }
 .comment {
+	text-indent: 2em;
 }
 
+.hint {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+
+	padding: 1em;
+	border-radius: 10px;
+	backdrop-filter: brightness(0.5);
+	text-indent: 0;
+}
+.hint:hover {
+	/* opacity: 1; */
+}
+.hint::after {
+	content: "Click on image to zoom-in";
+}
+.hint:hover::after {
+	content: "Not here, on the image";
+}
 /** table **/
 .table {
 	display: flex;
@@ -232,12 +269,15 @@ button:active {
 }
 @media only screen and (max-width: 850px) {
 	.assignment {
-		font-size: 3em;
+		font-size: 2.5em;
 	}
 	.prompt {
 		font-size: 1.7em;
 	}
 	.answer {
 		font-size: 1em;
+	}
+	iframe {
+		height: 200px;
 	}
 }

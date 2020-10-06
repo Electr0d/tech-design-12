@@ -32,7 +32,10 @@ body {
 .gap {
 	height: 15em;
 }
-
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
 @keyframes assignment-draw-in {
 	50% {
 		transform: scale(1);

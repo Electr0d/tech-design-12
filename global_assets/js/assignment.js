@@ -2,6 +2,7 @@ const content = document.querySelector('.assignment-content');
 const contentLength = document.querySelector('.assignment-content').children.length;
 
 var questionsListed = 0;
+let overlayOn = false;
 
 function questionDrawIn() {
 	content.children[questionsListed].classList.add('question-draw-in');
@@ -24,6 +25,30 @@ if (document.querySelectorAll('li').length != 0 && document.title.toLowerCase().
 
 // enlarge image onclick
 function imageZoomToggle(e, zoomed) {
-	let ref = e.href;
-	console.log(ref);
+	let src = e.src;
+	let style = e.style;
+	console.log(src);
+
+	// create overlay
+	let overlay = document.createElement('overlay');
+	overlay.setAttribute('onclick', 'removeOverlay()');
+	document.body.appendChild(overlay);
+
+	// create image
+	let image = document.createElement('img');
+	image.setAttribute('src', src);
+	image.setAttribute('class', 'overlay-image');
+	image.setAttribute('style', 'background: rgb(200, 200, 200)');
+	overlay.appendChild(image);
+
+	document.body.style.overflowY = 'hidden';
+
+	overlayOn = true;
+}
+
+function removeOverlay() {
+	document.body.removeChild(document.querySelector('overlay'));
+
+	document.body.style.overflowY = 'auto';
+	overlayOn = false;
 }

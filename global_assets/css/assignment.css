@@ -194,14 +194,14 @@ button:active {
 	border-radius: 1em;
 	cursor: pointer;
 }
-/*
+
 .embedded-image:not(iframe):hover {
 	filter: brightness(0.8) blur(2px);
 }
 .embedded-image:hover ~ .hint {
 	opacity: 1;
 }
-*/
+
 .embedded-image,
 .comment {
 	width: 95%;
@@ -225,7 +225,7 @@ button:active {
 	text-indent: 0;
 }
 .hint:hover {
-	/* opacity: 1; */
+	opacity: 1;
 }
 .hint::after {
 	content: "Click on image to zoom-in";
@@ -282,5 +282,35 @@ button:active {
 	}
 	iframe {
 		height: 200px;
+	}
+}
+
+overlay {
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	backdrop-filter: brightness(0.2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.overlay-image {
+	border-radius: 20px;
+	height: 90%;
+	animation: overlay-image-animation 0.2s ease-out;
+}
+
+@keyframes overlay-image-animation {
+	0% {
+		transform: scale(2.5);
+		opacity: 0;
+	}
+	80% {
+		transform: scale(0.98);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
 	}
 }

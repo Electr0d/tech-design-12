@@ -28,7 +28,7 @@
     <!-- Question 1-->
     <div class="question">
       <div class="prompt">
-        Transcript: The first iteration
+        Transcript: The First Iteration
       </div>
       <div class="answer">
         <p>
@@ -36,7 +36,7 @@
           which is, if you may not know "the consequences of catching the coronavirus". So I started with a ramp with a ball going down the ramp
           and many spheres on the edges of that ramp. When the ball goes down the ramp, it knocks all the spheres and each of them goes into a 
           specific bucket. There were "debt", "death". The problem is that it is very limiting and boring, I have to animate about 40 spheres, and each
-          take about 30 minutes to get it somewhat realistic. So I scrapped the project and restarted from zero.
+          take about 30 minutes to get it somewhat realistic. So I scrapped the project and restarted.
         </p>
         <div class="image-embed-container">
           <div class="image-embed">
@@ -44,8 +44,9 @@
             <div class="hint"></div>
           </div>
           <div class="comment">
-            This is a render of the old project, it carries the same design from the one I did last year, just a simple square room with a light. Dead.
-            There are two buckets labelled "Debt" because I haven't come up with a name for one of the buckets yet.
+            This is a render of the old project, it carries the same design from the one I did last year, just a simple square room with a light. 
+            Feels and looks dead.
+            There are two buckets labelled "Debt" because I haven't come up with a name for the third bucket at that point.
           </div>
         </div>
 
@@ -60,7 +61,7 @@
       <div class="answer">
         <p>
           From the start, I wanted to make an animation that portrays multiple messages, and incorporates easter eggs, by making the main message 
-          direct and obvious, and the secondary messages indirect and less obvious unless if you look into the animation hard enough.
+          direct and obvious, and the secondary messages indirect and less obvious unless if you look into the animation closely.
         </p>
         <p>
           I started with a plane, then extruded edges up to create walls. I added an HDRI texture with a square light with high intensity to 
@@ -83,7 +84,7 @@
           </div>
           <div class="comment">
             The HDRI texture in Blender is wrapped around the entire scene, the white box is the room, the yellow square is the square light, used 
-            to give inside the room a late evening look.
+            to give inside the room a "late evening" look.
           </div>
         </div>
         
@@ -134,7 +135,7 @@
               <source src="assets/vid/dolly-rig-demo.mp4" type="video/mp4">
             </video>
             <div class="comment">
-              Demo of a dolly camera rig
+              Demo of the dolly camera rig
             </div>
           </div>
         </div>
@@ -183,7 +184,7 @@
           I then had the idea of stacking books on top of each other to elevate the spheres. So I modeled the books, they were a little tricky
           because I wanted to go for a low-poly count to optimize my scene while making it look like a book. When it was time to add a book cover
           I had the idea of including a secret message with the book, so I picked a book cover for the book "The war on the Uyghurs: China's 
-          Campaign Against XinJiang's Muslims"
+          Campaign Against XinJiang's Muslims".
         </p>
 
       </div>
@@ -197,7 +198,7 @@
       <div class="answer">
         <p>
           Modeling the box itself is very easy. I only created a box, deleted the bottom face, and added a bevel modifier to smooth out the edges.
-          The hard part was the motor with the knife attacthed, I first begain with a red button that is connected to the outlet on one end, and 
+          The hard part was the motor with the knife attached, I first began with a red button that is connected to the outlet on one end, and 
           the motor on the other end, as soon as the button is pushed, the motor activates and starts spinning, the blade cuts the rope and the box 
           falls on the ball. Modeling the motor itself was rather easy, I just created a cylinder with a subdivision surface modifier to give it 
           smooth edges. So was the rod and the blade. The hard part was animating it. If I set the rotation of the first keyframe to 0°, then the 
@@ -214,8 +215,8 @@
       </div>
       <div class="answer">
         <p>
-          Modeling the light switch was very easy, since it was really far away from the camera, I didn't have to make it hi-res, so I sticked 
-          with a low-poly design to optimize the scene, and because it's easier for me. I then modeled a small stick which is a a little
+          Modeling the light switch was simple, since it was really far away from the camera, I didn't have to make it hi-res, so I sticked 
+          with a low-poly design to optimize the scene, and because it's easier for me. Then, I modeled a small stick which is a a little
           cuboid with a simple bevel modifier to give it smooth edges. Animating it was a little harder though. I had to animate the box frame by 
           frame as if falls, hits the stick, and spins 360°, before landing down on the floor.
         </p>
@@ -230,9 +231,10 @@
       <div class="answer">
         <p>
           Getting the ball to be pushed out the box was a little tricky, I first thought of making a piston that pushed out the ball, but thought, 
-          "how can this be justified?" this is where the idea of the battery popped up. I went back to the box and model a battery with wires 
-          going out from each terminal, before merging and wiring into the piston and light. The battery was held in place with a duct tape. Modelling the tape
-          was easier than expected, just a plane with solidify modifier to give it a small thickness, and a subdivision surface modifier to smooth out the edges.
+          "how can this be justified?" this is where the idea of the battery popped up. I went back to the box and modelled a battery with wires 
+          going out from each terminal, before merging and wiring into the piston and LED light. The battery was held in place with a duct tape. 
+          Modelling the tape was easier than expected, just a plane with a solidify modifier to give it a small thickness, and a subdivision surface 
+          modifier to smooth out the edges.
         </p>
 
         <div class="image-embed-container">
@@ -242,7 +244,7 @@
           </div>
           <div class="comment">
             Behind the box. Unfortunately the battery didn't fit on the side of the box, and it would block the text if I put it at the front. So 
-            you don't really get to see what.
+            you don't really get to see it.
           </div>
         </div>
 
@@ -252,7 +254,7 @@
             the piston is activated.
           </p>
           <p>
-            The light was made by first cutting a hole through the box by using a boolean. The concept of booleans will be later explained. I used a 
+            The light was made by first cutting a hole through the box by using a boolean. The concept of booleans is explained below. I used a 
             simple cylinder with an emission shader so it would emit light as it beeps.
           </p>
 
@@ -277,9 +279,9 @@
       <div class="answer">
         <p>
           This component was the hardest the create. I started with a wooden stand and a laser. The laser was made of a very thin cubiod to imitate
-          a laser beam and a spot light, to shine a thicker circle on the ground. The laser was connected to the outlet on one end, and to a piston
-          on the other I copied the piston design from component 4, resized the cylinder to fit the bucket. and attacked it to the bucket a brace
-          (is that the right word?) and two screws.
+          a laser beam and a spot light, to shine a thicker circle on the ground. The laser module is connected to the outlet on one end, and 
+          to a piston on the other I copied the piston design from component 4, resized the cylinder to fit the bucket. and attached it to the 
+          bucket using a brace (is that the right word?) and two screws.
         </p>
         
         <div class="image-embed-container">
@@ -295,7 +297,8 @@
         <p>
           As the piston retracts, opening the bucket trapdoor, and the books fall. Animating the books was 
           tricky. I could've used a physics simulation which would've taken care of the animation for me, but I don't know much about Blender 
-          simulations and wanted the most efficient way, so I animated every book by hand, then I adjusted the timing to make it as realistic as I 
+          simulations and wanted the most efficient and reliable way, so I animated every book by hand, then I adjusted the timing to make it as 
+          realistic as I 
           could. The problem with this approach is that when I rendered prototype 3, the animation was too fast, so I slowed it down a bit, and 
           for some reason the books started clipping into each other as a side effect, which I noticed when I was adding sounds after rendering
           the final animation. The good thing though, is that it goes on fast enough for the viewer not to notice, so I let it slide. 
@@ -313,7 +316,7 @@
         <p>
           The bucket is connected to a hanging scale. The design for the hanging scale at first was a simple hanging scale with seven-segment 
           display that reads out the weight of the bucket. But I wanted to include a reference, that's when I got the idea of making BMO from
-          Adventure Time the hanging scale. So I modeled BMO, and originally I wanted to have BMO grabbing on the hook on one hand, and the 
+          "Adventure Time" the hanging scale. So I modeled BMO, and originally I wanted to have BMO grabbing on the hook on one hand, and the 
           bucket on the other hand, but modelling that would take too long, because I have to model BMO's hands, rig them, which is a painful 
           process of going back and forth and checking if the bones work properly and don't make his hands look weird, then pose him. So I 
           decided to make BMO holding the bucket with his feet.
@@ -321,8 +324,7 @@
 
         <p>
           I modeled the two faces in Illustrator, I went with a simple design, since you can't really see his face. What you can see though, is that 
-          the background transitions from red to green, which signals that the weight reading decreased. I am not very satisfied with the design,
-          but I am sticking with it.
+          the background transitions from red to green, which signals that the weight reading decreased. I am not very satisfied with the design.
         </p>
 
         <div class="image-embed-container">
@@ -437,14 +439,14 @@
       </div>
       <div class="answer">
         <p>
-          I set the resolution to 2200 x 1080(at later prototypes), which is a cinematic resolution, and rendered at 60fps all the frames, which 
-          are up to 2130 frames. Each frame took about 8 seconds to render, so the entire render took about 5 hours. I usually render when I have
+          I set the resolution to 2200 x 1080 (in later prototypes), which is a cinematic resolution, and rendered at 60 FPS. There are up to
+          2130 frames. Each frame took about 8 seconds to render, so the entire render took about 5 hours. I usually render when I have
           something else to do, like math, where I don't have to rely on my laptop too much when it's rendering. Other times, I would render 
           overnight. I looked at each prototype, and made adjustments to timings, etc.
         </p>
         <p>
           I rendered 6 prototypes. Here they are. Prototype 6 is the final video, but without sound. Prototype 2 isn't included because it takes up
-          too much space for some reason.
+          too much space for some reason (500 MB).
         </p>
 
 

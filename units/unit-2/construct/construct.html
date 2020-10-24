@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamza Alsarakbi Tech Design 12 - Construct</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../global_assets/css/assignment.css">
+  <link rel="stylesheet" href="../../../global_assets/css/themes/darkTheme.css">
+  <link rel="stylesheet" href="../../../global_assets/css/scrollbar.css">
+  <link rel="icon" href="../../../global_assets/img/icon.png">
+</head>
+<body>
+  <div class="gap"></div>
+  <div class="assignment">2.6 - Construct 🔧</div>
+  <div class="line"></div>
+  <div class="assignment-content">
+    <!-- Question 1-->
+    <div class="question">
+      <div class="prompt">
+        Rube Goldberg Machine Animation timelapse
+      </div>
+      <div class="answer">
+        <p>Video coming soon.</p>
+      </div>
+    </div>
+
+    <!-- Question 1-->
+    <div class="question">
+      <div class="prompt">
+        Transcript: The first iteration
+      </div>
+      <div class="answer">
+        <p>
+          When I first started working on the Rube Goldberg machine, I didn't really know what I am supposed to do, all I knew was the purpose,
+          which is, if you may not know "the consequences of catching the coronavirus". So I started with a ramp with a ball going down the ramp
+          and many spheres on the edges of that ramp. When the ball goes down the ramp, it knocks all the spheres and each of them goes into a 
+          specific bucket. There were "debt", "death". The problem is that it is very limiting and boring, I have to animate about 40 spheres, and each
+          take about 30 minutes to get it somewhat realistic. So I scrapped the project and restarted from zero.
+        </p>
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/1st-iteration.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            This is a render of the old project, it carries the same design from the one I did last year, just a simple square room with a light. Dead.
+            There are two buckets labelled "Debt" because I haven't come up with a name for one of the buckets yet.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Question 2-->
+    <div class="question">
+      <div class="prompt">
+        Transcript: Getting Started
+      </div>
+      <div class="answer">
+        <p>
+          From the start, I wanted to make an animation that portrays multiple messages, and incorporates easter eggs, by making the main message 
+          direct and obvious, and the secondary messages indirect and less obvious unless if you look into the animation hard enough.
+        </p>
+        <p>
+          I started with a plane, then extruded edges up to create walls. I added an HDRI texture with a square light with high intensity to 
+          create a late evening feel. I decided to place the window away from the camera so I don't have to model the window frame and curtains, 
+          saving me plenty of time.
+        </p>
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/hdri-texture.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            This is the HDRI texture, it looks weird because this is what unwrapping a sphere surface on a flat plane looks like.
+          </div>
+        </div>
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/lighting.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            The HDRI texture in Blender is wrapped around the entire scene, the white box is the room, the yellow square is the square light, used 
+            to give inside the room a late evening look.
+          </div>
+        </div>
+        
+          <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/room-without-light.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            Inside the room without the light
+          </div>
+        </div>
+
+          <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/room-with-light.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            Inside the room with the light
+          </div>
+        </div>
+
+
+        </div>
+
+
+
+      </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+      <div class="prompt">
+        Transcript: Camera 🎥
+      </div>
+      <div class="answer">
+        <p>
+          I added a dolly camera rig. Which has a very easy way of manipulating camera movement to create amazing cinematic scenes. The base 
+          bone moves the entire rig, the outer circle bone moves the camera while keeping the camera facing the target bone. The inner circle 
+          bone moves the camera relatively to the outer circle bone, the target bone controls where the camera is looking (x, y, and z rotations).
+          At first I set the target bone to follow the ball which resulted in the ball being at the center of the camera all the time, which looked
+          odd. So I removed it.
+        </p>
+      
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <video class="embedded-image" id="video" controls>
+              <source src="assets/vid/dolly-rig-demo.mp4" type="video/mp4">
+            </video>
+            <div class="comment">
+              Demo of a dolly camera rig
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+      <div class="prompt">
+        Transcript: Component 1
+      </div>
+      <div class="answer">
+        <p>
+          Immediately after creating the plane, I added a ramp with raised edges, which is actually the same ramp I created from the first iteration.
+          I felt like I was falling back in the same trap. So I hid the object and made a table. The table was easy to make, I just added a mirror
+          modifier on the x and y axis, which copied exactly what I was modeling, which was the legs, and then I started working on the material.
+          The material was the hard part, I wanted it to look somewhat realistic, so I pulled up a reference photo of wood and started with a wave
+          texture to represent chisels. I added distortion so the lines are not 100% straight and perfect. Still though, I was not convinced, 
+          so I added a noise texture to give the surface little bumps throughout the model, then I changed the wave from lines to radial.
+        </p>
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/wood-node-tree.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            Node tree of dark wood, used for the table and the trapdoor in component 5
+          </div>
+        </div>
+
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/dark-wood-preview.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            Material preview on a flat plane
+          </div>
+        </div>
+
+        <p>
+          I then had the idea of stacking books on top of each other to elevate the spheres. So I modeled the books, they were a little tricky
+          because I wanted to go for a low-poly count to optimize my scene while making it look like a book. When it was time to add a book cover
+          I had the idea of including a secret message with the book, so I picked a book cover for the book "The war on the Uyghurs: China's 
+          Campaign Against XinJiang's Muslims"
+        </p>
+
+      </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+      <div class="prompt">
+        Transcript: Component 2
+      </div>
+      <div class="answer">
+        <p>
+          Modeling the box itself is very easy. I only created a box, deleted the bottom face, and added a bevel modifier to smooth out the edges.
+          The hard part was the motor with the knife attacthed, I first begain with a red button that is connected to the outlet on one end, and 
+          the motor on the other end, as soon as the button is pushed, the motor activates and starts spinning, the blade cuts the rope and the box 
+          falls on the ball. Modeling the motor itself was rather easy, I just created a cylinder with a subdivision surface modifier to give it 
+          smooth edges. So was the rod and the blade. The hard part was animating it. If I set the rotation of the first keyframe to 0°, then the 
+          second keyframe to 360°, the rod wouldn't spin. It was a constant trial and error until I got it right, then I added a cycles modifier 
+          to repeat the animation, creating the illusion of spinning.
+        </p>
+      </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+      <div class="prompt">
+        Transcript: Component 3
+      </div>
+      <div class="answer">
+        <p>
+          Modeling the light switch was very easy, since it was really far away from the camera, I didn't have to make it hi-res, so I sticked 
+          with a low-poly design to optimize the scene, and because it's easier for me. I then modeled a small stick which is a a little
+          cuboid with a simple bevel modifier to give it smooth edges. Animating it was a little harder though. I had to animate the box frame by 
+          frame as if falls, hits the stick, and spins 360°, before landing down on the floor.
+        </p>
+      </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+      <div class="prompt">
+        Transcript: Component 4
+      </div>
+      <div class="answer">
+        <p>
+          Getting the ball to be pushed out the box was a little tricky, I first thought of making a piston that pushed out the ball, but thought, 
+          "how can this be justified?" this is where the idea of the battery popped up. I went back to the box and model a battery with wires 
+          going out from each terminal, before merging and wiring into the piston and light. The battery was held in place with a duct tape. Modelling the tape
+          was easier than expected, just a plane with solidify modifier to give it a small thickness, and a subdivision surface modifier to smooth out the edges.
+        </p>
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/battery.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            Behind the box. Unfortunately the battery didn't fit on the side of the box, and it would block the text if I put it at the front. So 
+            you don't really get to see what.
+          </div>
+        </div>
+
+
+          <p>
+            Making the piston was relatively easy, it was just a cylinder with a subdivision surface modifier, and a plate that exerts energy when
+            the piston is activated.
+          </p>
+          <p>
+            The light was made by first cutting a hole through the box by using a boolean. The concept of booleans will be later explained. I used a 
+            simple cylinder with an emission shader so it would emit light as it beeps.
+          </p>
+
+          <div class="image-embed-container">
+            <div class="image-embed">
+              <img class="embedded-image" src="assets/img/boolean.png" onclick="imageZoomToggle(this)">
+              <div class="hint"></div>
+            </div>
+            <div class="comment">
+              The cylinder cuts through the cube, and is therefore a boolean
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+      <div class="prompt">
+        Transcript: Component 5
+      </div>
+      <div class="answer">
+        <p>
+          This component was the hardest the create. I started with a wooden stand and a laser. The laser was made of a very thin cubiod to imitate
+          a laser beam and a spot light, to shine a thicker circle on the ground. The laser was connected to the outlet on one end, and to a piston
+          on the other I copied the piston design from component 4, resized the cylinder to fit the bucket. and attacked it to the bucket a brace
+          (is that the right word?) and two screws.
+        </p>
+        
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/laser.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            The laser stand, close up
+          </div>
+        </div>
+        
+        <p>
+          As the piston retracts, opening the bucket trapdoor, and the books fall. Animating the books was 
+          tricky. I could've used a physics simulation which would've taken care of the animation for me, but I don't know much about Blender 
+          simulations and wanted the most efficient way, so I animated every book by hand, then I adjusted the timing to make it as realistic as I 
+          could. The problem with this approach is that when I rendered prototype 3, the animation was too fast, so I slowed it down a bit, and 
+          for some reason the books started clipping into each other as a side effect, which I noticed when I was adding sounds after rendering
+          the final animation. The good thing though, is that it goes on fast enough for the viewer not to notice, so I let it slide. 
+        </p>
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/trapdoor.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            The trapdoor, close up
+          </div>
+        </div>
+
+        <p>
+          The bucket is connected to a hanging scale. The design for the hanging scale at first was a simple hanging scale with seven-segment 
+          display that reads out the weight of the bucket. But I wanted to include a reference, that's when I got the idea of making BMO from
+          Adventure Time the hanging scale. So I modeled BMO, and originally I wanted to have BMO grabbing on the hook on one hand, and the 
+          bucket on the other hand, but modelling that would take too long, because I have to model BMO's hands, rig them, which is a painful 
+          process of going back and forth and checking if the bones work properly and don't make his hands look weird, then pose him. So I 
+          decided to make BMO holding the bucket with his feet.
+        </p>
+
+        <p>
+          I modeled the two faces in Illustrator, I went with a simple design, since you can't really see his face. What you can see though, is that 
+          the background transitions from red to green, which signals that the weight reading decreased. I am not very satisfied with the design,
+          but I am sticking with it.
+        </p>
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/bmo-sad.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            BMO, close up
+          </div>
+        </div>
+
+        <p>
+          The books represent the Quality of Life, when the books fall, the weight reading decreases, which represents the Quality of Life 
+          decreasing. I copied the books from component 1 and updated the covers. The elements that make up Quality of Life are:
+          <ul>
+            <li>Emotional Wellbeing</li>
+            <li>Health</li>
+            <li>Financial Wellbeing</li>
+            <li>Social Relationships</li>
+          </ul>
+        </p>
+
+      </div>
+    </div>
+
+
+  <!-- Question 8 -->
+  <div class="question">
+    <div class="prompt">
+      Transcript: Component 6
+    </div>
+    <div class="answer">
+      <p>
+        This component was a little harder than what I originally anticipated. The idea behind is that the all these spheres turn black as the
+        main ball goes through them. I could've added a different material for each ball and made it transition from white to black, but that
+        would take too much time. Instead, I thought of making a radial gradient that expands as the ball goes through the spheres, creating
+        the illustion that all the spheres are individually animated. Here's the node tree of the material. The video below explains how it works.
+      </p>
+
+      <div class="image-embed-container">
+        <div class="image-embed">
+          <img class="embedded-image" src="assets/img/component-6-node-tree.png" onclick="imageZoomToggle(this)">
+          <div class="hint"></div>
+        </div>
+        <div class="comment">
+          Node tree of the material
+        </div>
+      </div>
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <video class="embedded-image" id="video" controls>
+              <source src="assets/vid/material-controller.mp4" type="video/mp4">
+            </video>
+            <div class="comment">
+              How the material works
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+  <!-- Question 9 -->
+  <div class="question">
+    <div class="prompt">
+      Transcript: Component 7
+    </div>
+    <div class="answer">
+      <p>
+        This component was very simple and easy. I just made the sphere transition from the black colour to the red colour, which symbolizes death.
+      </p>
+    </div>
+  </div>
+
+  <!-- Question 9 -->
+  <div class="question">
+    <div class="prompt">
+      Transcript: Component 8
+    </div>
+    <div class="answer">
+      <p>
+        This component was very simple and easy as well. I just changed the colour of the ball from black to dark grey, which symbolizes that
+        the recovered patients' health is not as good as it used to be.
+      </p>
+    </div>
+  </div>
+
+    <!-- Question 9 -->
+    <div class="question">
+      <div class="prompt">
+        Transcript: Final Touches ✨
+      </div>
+      <div class="answer">
+        <p>
+          For the final touches I showed the animation to Ms. Kozowy and got feedback on what I should add. She suggested I add text that explains
+          what each component means/symbolizes.
+        </p>
+        <p>
+          Going back and adding the texts was very easy, I placed them on walls, and gave then a linear gradient animation as the component activates
+          so that it would make more sense to the viewer, and took out the texts when it became out of the camera's view to declutter the scene.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- Question 10 -->
+    <div class="question">
+      <div class="prompt">
+        Transcript: Rendering 📹
+      </div>
+      <div class="answer">
+        <p>
+          I set the resolution to 2200 x 1080(at later prototypes), which is a cinematic resolution, and rendered at 60fps all the frames, which 
+          are up to 2130 frames. Each frame took about 8 seconds to render, so the entire render took about 5 hours. I usually render when I have
+          something else to do, like math, where I don't have to rely on my laptop too much when it's rendering. Other times, I would render 
+          overnight. I looked at each prototype, and made adjustments to timings, etc.
+        </p>
+        <p>
+          I rendered 6 prototypes. Here they are. Prototype 6 is the final video, but without sound. Prototype 2 isn't included because it takes up
+          too much space for some reason.
+        </p>
+
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <video class="embedded-image" id="video" controls>
+              <source src="assets/vid/p-1.mp4" type="video/mp4">
+            </video>
+            <div class="comment">
+              Prototype 1
+            </div>
+          </div>
+        </div>
+        
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <video class="embedded-image" id="video" controls>
+              <source src="assets/vid/p-3.mp4" type="video/mp4">
+            </video>
+            <div class="comment">
+              Prototype 3
+            </div>
+          </div>
+        </div>
+        
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <video class="embedded-image" id="video" controls>
+              <source src="assets/vid/p-4.mp4" type="video/mp4">
+            </video>
+            <div class="comment">
+              Prototype 4
+            </div>
+          </div>
+        </div>
+        
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <video class="embedded-image" id="video" controls>
+              <source src="assets/vid/p-5.mp4" type="video/mp4">
+            </video>
+            <div class="comment">
+              Prototype 5
+            </div>
+          </div>
+        </div>
+        
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <video class="embedded-image" id="video" controls>
+              <source src="assets/vid/p-6.mp4" type="video/mp4">
+            </video>
+            <div class="comment">
+              Prototype 6
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+  <div class="footer">
+    <a href="../../../index.html"><button id="back">Back to the Home Page</button></a>
+  </div>
+  <script src="../../../global_assets/js/assignment.js"></script>
+</body>
+</html>

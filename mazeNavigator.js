@@ -9,12 +9,13 @@ let rgb = {
 };
 const mazes = {
 	noidea: {
+
 		// phase 1
 		step_0: {
 			type: 'roll',
 			speed: 112,
 			direction: 0,
-			duration: 1.7
+			duration: 1.74
 		},
 		step_1: {
 			type: 'stop'
@@ -23,9 +24,9 @@ const mazes = {
 		// phase 2
 		step_2: {
 			type: 'roll',
-			speed: 52,
+			speed: 60,
 			direction: 60,
-			duration: 1
+			duration: 1.08
 		},
 		step_3: {
 			type: 'stop'
@@ -34,26 +35,27 @@ const mazes = {
 		// phase 3
 		step_4: {
 			type: 'roll',
-			speed: 52,
+			speed: 50,
 			direction: -35,
 			duration: 1.35
 		},
-
+		
 		// phase 4
 		step_5: {
 			type: 'stop'
 		},
-
+		
 		step_6: {
 			type: 'roll',
-			speed: 75,
+			speed: 76,
 			direction: 60,
 			duration: 1.4
 		},
-
+		
 		// phase 5
 		step_7: {
-			type: 'stop'
+			type: 'delay',
+			duration: 2,
 		},
 		step_8: {
 			type: 'roll',
@@ -86,9 +88,6 @@ function led(r, g, b) {
 	rgb.r = r;
 	rgb.g = g;
 	rgb.b = b;
-}
-async function wait(ms) {
-	await delay(ms / 1000);
 }
 
 function invertColor() {
@@ -135,6 +134,8 @@ async function maze(maze, direction) {
 			} else if (step.type == 'stop') {
 				led(200, 25, 25);
 				stopRoll();
+			} else if (step.type == 'delay') {
+				await delay(Number(type.duration));
 			}
 		}
 	}
@@ -142,32 +143,3 @@ async function maze(maze, direction) {
 async function onCollision() {
 	await speak('OW!');
 }
-
-/*
-	if (step.type == 'roll') {
-		led(50, 200, 50);
-	} else if (type == 'set') {
-		led(255, 80, 20);
-	} else {
-		led(200, 25, 25);
-	}
-
-	async function executeStep(maze) {
-	let step = maze['step_' + maze.index];
-	if (step.type == 'set') {
-		led(255, 80, 20);
-		setHeading(step.direction);
-	} else if (step.type == 'roll') {
-		led(50, 200, 50);
-		await roll(step.direction, step.speed, step.duration);
-	} else if (step.type == 'stop') {
-		led(200, 25, 25);
-		stopRoll();
-	}
-
-	if (step.index < step.length) {
-		maze.index++;
-		executeStep(maze);
-	}
-}
-	*/

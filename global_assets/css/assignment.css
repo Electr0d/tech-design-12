@@ -195,7 +195,7 @@ button:active {
 	cursor: pointer;
 }
 
-.embedded-image:not(iframe):hover {
+.embedded-image:not(iframe):not(video):hover {
 	filter: brightness(0.8) blur(2px);
 }
 .embedded-image:hover ~ .hint {
@@ -303,11 +303,11 @@ overlay {
 
 @keyframes overlay-image-animation {
 	0% {
-		transform: scale(2.5);
+		transform: scale(0.9);
 		opacity: 0;
 	}
-	80% {
-		transform: scale(0.98);
+	75% {
+		transform: scale(1.01);
 		opacity: 1;
 	}
 	100% {

@@ -1,7 +1,9 @@
 :root {
 	--primary-color: rgb(200, 200, 200);
 	--primary-color: rgb(150, 150, 150);
-	--primary-background: rgb(20, 20, 20);
+	--primary-background-color: rgb(20, 20, 20);
+	/* --primary-background: var(--primary-background-color) */
+	--primary-background: var(--primary-background-color) url(../../img/background-texture.png);
 
 	/** Accent Colours **/
 	--primary-accent: #f14444;

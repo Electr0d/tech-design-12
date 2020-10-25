@@ -17,6 +17,8 @@ body {
 	background: var(--primary-background);
 	width: 100vw;
 	max-width: 100%;
+	background-repeat: repeat;
+
 }
 
 .gap {
@@ -48,7 +50,8 @@ button {
 #header-slide {
 	width: 100%;
 	height: 100vh;
-	background: url("../global_assets/img/techdesign.png");
+	background: url("../global_assets/img/tech-design-2.png");
+	background-position-y: top;
 	backdrop-filter: blur(4px);
 	background-attachment: fixed;
 }

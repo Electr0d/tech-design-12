@@ -52,3 +52,19 @@ function removeOverlay() {
 	document.body.style.overflowY = 'auto';
 	overlayOn = false;
 }
+
+if(document.querySelectorAll('.animateable').length > 0) {
+	setInterval(() => {
+		let animateable = document.querySelectorAll('.animateable');
+		for(let i = 0; i < animateable.length; i++) {
+			let e = animateable[i];
+			e.textContent = e.dataset.default + ' ' + e.dataset[e.dataset.index]
+			e.dataset.index = Number(e.dataset.index) + 1;
+			if(!(Number(e.dataset.index) < Number(e.dataset.length))) {
+				e.dataset.index = 0;
+			}
+			console.log(e.textContent, e.dataset.length, e.dataset.index);
+		}
+	}, 500);
+}
+

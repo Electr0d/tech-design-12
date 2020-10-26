@@ -315,3 +315,11 @@ overlay {
 		transform: scale(1);
 	}
 }
+
+textarea.code {
+	background: var(--primary-textarea-background);
+	border: 1px solid var(--primary-accent);
+	border-radius: 7px;
+	padding: 2em;
+	resize: vertical;
+}

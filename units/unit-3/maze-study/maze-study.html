@@ -35,7 +35,7 @@
     <!-- Question 1-->
     <div class="question">
       <div class="prompt">
-        Code 👨‍💻
+        Logic
       </div>
       <div class="answer">
         <p>
@@ -54,16 +54,182 @@
         <p>
           When I started working on the movement script, I originally wanted to write simple vanilla commands, but, I was on the "end" side of the maze,
           and since I am really lazy, I decided to write the script in a way that it executes steps in normal order and in reverse order. So that in the
-          end, I could make the program execute the commands in reverse order (from the "beginning" to the "end" of the maze).
+          end, I could make the program execute the commands in reverse order from the "beginning" to the "end" of the maze.
         </p>
         <p>
           Writing the code is always easier said than done, and since the Canvas included with the Sphero Edu program had very little debug capabilities,
           it was hard to find the problems of my code and fix them. I had to look through my code numerous times to find each bug. At the end, though, I
           got the code to work.
         </p>
+        <p>
+          The way the code works is that I write steps in a JavaScript object and in each step I define what to do (stop, set direction, roll) and 
+          at what speed if rolling and for how long. The script would go through ever step and execute the command.
+        </p>
 
       </div>
     </div>
+    
+    
+        <!-- Question 1 -->
+        <div class="question">
+          <div class="prompt">
+            Source Code 👨‍💻
+          </div>
+          <div class="answer">
+            <p>
+              Here's the source code for the script I made.
+            </p>
+            <textarea class="code" rows="40" columns="20" readonly id="maze-code">
+let rgb = {
+  r: 0,
+  g: 0,
+  b: 0,
+  effects: {
+    invert: false,
+    epilepsyMode: false
+  }
+};
+const mazes = {
+  noidea: {
+
+    // phase 1
+    step_0: {
+      type: 'roll',
+      speed: 112,
+      direction: 0,
+      duration: 1.74
+    },
+    step_1: {
+      type: 'stop'
+    },
+
+    // phase 2
+    step_2: {
+      type: 'roll',
+      speed: 60,
+      direction: 60,
+      duration: 1.08
+    },
+    step_3: {
+      type: 'stop'
+    },
+
+    // phase 3
+    step_4: {
+      type: 'roll',
+      speed: 50,
+      direction: -35,
+      duration: 1.3
+    },
+
+    // phase 4
+    step_5: {
+      type: 'stop'
+    },
+
+    step_6: {
+      type: 'roll',
+      speed: 43,
+      direction: 60,
+      duration: 2
+    },
+
+    // phase 5
+    step_7: {
+      type: 'stop',
+      duration: 2,
+    },
+    step_8: {
+      type: 'set',
+      direction: -30,
+    },
+
+    step_9: {
+      type: 'roll',
+      speed: 150,
+      direction: -30,
+      duration: 0.93
+    },
+    step_10: {
+    type: 'stop'
+    },
+    
+    step_11: {
+      type: 'roll',
+      speed: 165,
+      direction: -45,
+      duration: 0.64,
+    },
+    step_12: {
+    type: 'stop'
+    },
+
+    // phase 6
+    step_13: {
+      type: 'roll',
+      speed: 100,
+      direction: 0,
+      duration: 0.5,
+    },
+    length: 14
+    // index: 0
+  }
+};
+
+async function startProgram() {
+  // Write code here
+  maze('noidea', 'normal');
+}
+
+function resetLed() {
+  led(rgb.r, rgb.g, rgb.b);
+}
+
+function led(r, g, b) {
+  setMainLed({ r: r, g: g, b: b });
+  rgb.r = r;
+  rgb.g = g;
+  rgb.b = b;
+}
+
+function invertColor() {
+  led(255 - rgb.r, 255 - rgb.g, 255 - rgb.b);
+  if (!rgb.effects.invert) {
+    rgb.effects.invert = true;
+  } else {
+    rgb.effects.invert = false;
+  }
+}
+async function maze(maze, direction) {
+  let mazeLength = mazes[maze].length;
+
+  if (direction == 'normal') {
+    // maze code
+
+    // executeStep(mazes[maze]);
+    
+    for (let i = 0; i < mazeLength; i++) {
+      let step = mazes[maze]['step_' + i];
+      
+      if (step.type == 'set') {
+        led(255, 80, 20);
+        setHeading(step.direction);
+      } else if (step.type == 'roll') {
+        led(50, 200, 50);
+        await roll(step.direction, step.speed, step.duration);
+      } else if (step.type == 'stop') {
+        led(200, 25, 25);
+        stopRoll();
+      }
+    }
+  }
+}
+async function onCollision() {
+  await speak('OW!');
+}
+            </textarea>
+          </div>
+        </div>
 
 
 

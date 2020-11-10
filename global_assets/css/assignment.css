@@ -323,3 +323,21 @@ textarea.code {
 	padding: 2em;
 	resize: vertical;
 }
+.text-wrapper {
+	max-width: 1000px;
+	min-height: 1000px;
+	align-self: center;
+	background: var(--primary-paper-background);
+	padding: 1in;
+	border-radius: 2px;
+	box-shadow: -4px 5px 8px var(--primary-shadow);
+}
+.paper-header {
+	font-size: 24px;
+	text-align: center;
+}
+.text-wrapper p {
+	font-family: 'Times New Roman';
+	color: var(--primary-paper-color);
+	line-height: 2.2em;
+}

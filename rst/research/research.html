@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamza Alsarakbi Tech Design 12 - Research the Problem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../global_assets/css/assignment.css">
+  <link rel="stylesheet" href="../../global_assets/css/themes/darkTheme.css">
+  <link rel="stylesheet" href="../../global_assets/css/scrollbar.css">
+  <link rel="icon" href="../../global_assets/img/icon.png">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/dracula.min.css">
+</head>
+
+<body>
+  <div class="gap"></div>
+  <div class="assignment">4.3 - Research the Problem</div>
+  <div class="line"></div>
+  <div class="assignment-content">
+    <!-- Question 1 -->
+    <div class="question">
+      <div class="prompt">
+        Definitions
+      </div>
+      <div class="answer">
+        <div class="header">GLaDOS</div>
+        <p>By including sci-fi elements, I mean include elements that are not normally found in a typical bedroom, like
+          GLaDOS</p>
+        <p>GLaDOS is the main antagonist in the Portal games. Its name stands for "Genetic Lifeform and Disk Operating
+          System"</p>
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/glados.jpg" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            A physical design of GLaDOS. It functions just like a Google Home, but looks cooler.
+          </div>
+        </div>
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/glados-portal.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            GLaDOS from Portal
+          </div>
+        </div>
+
+        <div class="header">Magic Mirror</div>
+        <p>
+          Magic mirror is a program I have been developing since June. The problem is that Summer School came up, so I
+          didn’t have time to work on it. After, I had to finish PassVault because my friend wanted a password manager,
+          so I crunched for 2 weeks to finish it. Then it was september. School started and I barely did anything in
+          August other than fix a problem about why my program was no longer making API calls which turned out to be a
+          setting that the developers of electron decided to turn off for some reason.
+        </p>
+        <p>With the rant out of the way, here it is in its current form.</p>
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/magic-mirror-dashboard.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            Magic Mirror dashboard. It is mostly empty because I only have the top left component added. Other
+            components are: thermostat,
+            clothing suggestions, weather, health, and calendar.
+          </div>
+        </div>
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/magic-mirror-settings.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            Here's the settings menu for MagicMirror. Most of the buttons work, except for the last 2 sections.
+          </div>
+        </div>
+        <p>
+          The reason why all this took very long is because I was building a library which enables me to add a parameter
+          with a single line.
+          For reference, this is the line that adds the "Show Seconds" switch.
+        </p>
+        <pre><code class="javascript">addParameter(generalSection, { text: 'Show seconds' }, 'switch', 'showSeconds', 'showSeconds()', true, false);</code></pre>
+
+
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <video class="embedded-image" id="video" controls>
+              <source src="assets/vid/demo-of-magic-mirror-settings.mp4" type="video/mp4">
+            </video>
+            <div class="comment">
+              Demo of Magic Mirror's settings.
+            </div>
+          </div>
+        </div>
+        <p>This is all I have so far. I am taking my time with this project because I don’t want to build a program that
+          is
+          hard to debug and fix. I want to build a program that uses scalable code and its components can be used in
+          other
+          projects.</p>
+
+      </div>
+    </div>
+
+
+    <!-- Question 2 -->
+    <div class="question">
+      <div class="prompt">
+        Materials
+      </div>
+      <div class="answer">
+        <p>I am using my carpet floor. Although using the following wall colours.</p>
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <div class="image-embed">
+              <img class="embedded-image hover-disabled" src="assets/img/dark-blue-wall-colour.png" style="width: 100px">
+              <div class="hint hover-disabled"></div>
+            </div>
+            <div class="comment">
+              Wall colour: #00304a
+            </div>
+          </div>
+        </div>
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <div class="image-embed">
+              <img class="embedded-image hover-disabled" src="assets/img/light-blue-wall-colour.png" style="width: 100px">
+              <div class="hint hover-disabled"></div>
+            </div>
+            <div class="comment">
+              Wall colour: #3953b3
+            </div>
+          </div>
+        </div>
+
+
+        <p>The desk wood has to be of black wood or brown wood with matching the nightstand and bookshelf.</p>
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <div class="image-embed">
+              <img class="embedded-image" src="assets/img/dark-wood.png" onclick="imageZoomToggle(this)">
+              <div class="hint"></div>
+            </div>
+            <div class="comment">
+              <a
+                href="https://www.homedepot.ca/product/d-c-fix-346-0034-home-decor-self-adhesive-film-17-inch-x-78-inch-blackwood--2-pack/1001159559">Dark
+                wood</a>
+            </div>
+          </div>
+        </div>
+
+
+        <p>I need a 3D printer to print GLaDOS's parts, and an RGB LED strip with an API to be controlled through my
+          app.
+        </p>
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <div class="image-embed">
+              <img class="embedded-image" src="assets/img/led-strip.png" onclick="imageZoomToggle(this)">
+              <div class="hint"></div>
+            </div>
+            <div class="comment">
+              <a
+                href="https://www.lightinthebox.com/en/p/mashang-5m-10m-15m-20m-led-strip-lights-rgb-led-light-strip-music-sync-led-strip-2835-smd-color-changing-led-strip-light-and-40-keys-remote-bluetooth_p8087733.html?currency=CAD&litb_from=paid_adwords_shopping&sku=18_4167%7C444_45506%7C1289_50632&country_code=ca">LED
+                strip</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <div class="image-embed">
+              <img class="embedded-image" src="assets/img/monitor.png" onclick="imageZoomToggle(this)">
+              <div class="hint"></div>
+            </div>
+            <div class="comment">
+              4 <a href="https://www.ebay.ca/i/233624189589?chn=ps">Monitor</a>s
+            </div>
+          </div>
+        </div>
+
+        <div class="header">Bed Shaker</div>
+        <p>I could make the base of the bed smaller and on rails. When the alarm fires, the bed goes in random directions on the rails. Which should motivate me enough to get up.
+          An easier approach would be to get one of these.
+        </p>
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <div class="image-embed">
+              <img class="embedded-image" src="assets/img/bed-shaker.jpg" onclick="imageZoomToggle(this)">
+              <div class="hint"></div>
+            </div>
+            <div class="comment">
+              Bed shaker
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    
+
+    <!-- Question 3 -->
+    <div class="question">
+      <div class="prompt">
+        Bedroom Designs
+      </div>
+
+      <div class="answer">
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <div class="image-embed">
+              <img class="embedded-image" src="assets/img/bedroom-designs/1.png" onclick="imageZoomToggle(this)">
+              <div class="hint"></div>
+            </div>
+            <div class="comment">
+              This design incorporates tech elements well. Makes good use of vertical space. Bookshelf is a part of the desk and is put higher up, freeing up space. LED strips are used below the table. A lot of space is available on the desk for studying. There is enough space for a VR setup.
+            </div>
+          </div>
+        </div>
+        
+      
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <div class="image-embed">
+              <img class="embedded-image" src="assets/img/bedroom-designs/2.png" onclick="imageZoomToggle(this)">
+              <div class="hint"></div>
+            </div>
+            <div class="comment">
+              <p>This bedroom makes good use of space as well. The only problem is that it makes little use of vertical space, there isn’t any space on the desk, and the chair seems very uncomfortable. I assume this follows the “minimalist” design which isn’t what I am looking for.</p>
+              <p>I would take down the poster. Move the monitor up and add a few others, replace the chair with one that is comfy, and move the bookshelf away from the bed because no one wants dozens of books falling on them (For instance, in an earthquake).</p>
+            </div>
+          </div>
+        </div>
+        
+      
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <div class="image-embed">
+              <img class="embedded-image" src="assets/img/bedroom-designs/3.png" onclick="imageZoomToggle(this)">
+              <div class="hint"></div>
+            </div>
+            <div class="comment">
+              <p>This bedroom makes okay use of vertical space. The desk is almost empty. The monitors are sitting on the desk, taking up space. The lighting is okay. Only using one light below the cd’s shelf. The consoles on the left of the picture are useless. They could be put under the desk, or high up. I would take out the consoles and cd’s and replace them with a bookshelf, and dresser. I would put the bed behind the desk to maximize the TV’s use case. The problem is that the room seems very small so there isn’t any room for a VR setup.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    <!-- Question 1 -->
+    <div class="question">
+      <div class="prompt">
+        Looking Back at my Previous Attempt
+      </div>
+      <div class="answer">
+
+        <p>This is not my first time trying to redesign my room. About a year ago, I wanted to design my room in Blender, but my attempt fell short since I was a novice at the time. Here it is</p>
+        
+        <div class="image-embed-container">
+          <div class="image-embed">
+            <div class="image-embed">
+              <img class="embedded-image" src="assets/img/previous-attempt/room-solid-view.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            A simple design of my room, in solid view.
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="image-embed-container">
+        <div class="image-embed">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/previous-attempt/room-solid-view-2.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            A simple design of my room, in solid view.
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="image-embed-container">
+        <div class="image-embed">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/previous-attempt/room-material-view.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            A simple design of my room, in material preview mode.
+          </div>
+        </div>
+      </div>
+      
+      <p>The reason why is that it was taking me too long to model the bed and the chair and I didn’t know at the time how to design nondestructively. Nondestructive modelling means modelling something that can be edited later on easily. An example of a destructive modelling is the bed.</p>
+      
+      <div class="image-embed-container">
+        <div class="image-embed">
+          <div class="image-embed">
+            <img class="embedded-image" src="assets/img/previous-attempt/bed-destructive.png" onclick="imageZoomToggle(this)">
+            <div class="hint"></div>
+          </div>
+          <div class="comment">
+            This is an example of destructive modelling. Changing the curve of the bed frame is too hard since there are too many vertices.
+          </div>
+        </div>
+      </div>
+      
+      <p>Since the problem is so bad, I have to remodel the entire bed frame, hence its called “destructive modelling”. Fixing this can be done by adding a cuboid, adding a loop cut in the middle, adding a bevel modifier, and moving the center vertices up to create a slope. Now changing the slope would be much easier since I just have to drag the two vertices in the middle up or down and make small adjustments to the bevel modifier.</p>
+      
+      <div class="image-embed-container">
+        <div class="image-embed">
+          <video class="embedded-image" id="video" controls>
+            <source src="assets/vid/remodelling-bed-slope.mp4" type="video/mp4">
+            </video>
+          <div class="comment">
+            The bed slope and can easily remodelled like this. The nice thing about this is that I can easily change the bevel amount and segments.
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+
+  
+  
+</div>
+<div class="footer">
+    <a href="../../index.html"><button id="back">Back to the Home Page</button></a>
+  </div>
+  <script src="../../global_assets/js/assignment.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

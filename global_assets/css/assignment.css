@@ -21,7 +21,7 @@ body {
 .assignment {
 	font-size: 5em;
 	color: var(--primary-accent);
-	text-shadow: -3px 3px 5px var(--primary-shadow);
+	text-shadow: -3px 3px 2px var(--primary-shadow);
 	width: 75%;
 	text-align: left;
 	transform: translateX(-10%) scale(0.9);
@@ -166,6 +166,7 @@ button:active {
 	line-height: 175%;
 	display: flex;
 	flex-direction: column;
+
 }
 
 .question-draw-in {
@@ -196,10 +197,10 @@ button:active {
 	cursor: pointer;
 }
 
-.embedded-image:not(iframe):not(video):hover {
+.embedded-image:not(iframe):not(video):not(.hover-disabled):hover {
 	filter: brightness(0.8) blur(2px);
 }
-.embedded-image:hover ~ .hint {
+.embedded-image:not(.hover-disabled):hover ~ .hint {
 	opacity: 1;
 }
 
@@ -225,7 +226,7 @@ button:active {
 	backdrop-filter: brightness(0.5);
 	text-indent: 0;
 }
-.hint:hover {
+.hint:not(.hover-disabled):hover {
 	opacity: 1;
 }
 .hint::after {
@@ -262,7 +263,8 @@ button:active {
 	text-align: left;
 }
 .criteria-table .row .cell#criteria {
-	width: 30%;
+	width: 100%;
+	text-align: left;
 }
 
 .criteria-table .row .cell#comments {
@@ -322,7 +324,10 @@ textarea.code {
 	border-radius: 7px;
 	padding: 2em;
 	resize: vertical;
+	min-width: 100px;
 }
+
+/** page **/
 .text-wrapper {
 	max-width: 1000px;
 	min-height: 1000px;
@@ -340,4 +345,13 @@ textarea.code {
 	font-family: 'Times New Roman';
 	color: var(--primary-paper-color);
 	line-height: 2.2em;
+}
+
+code {
+	border-radius: 1em;
+	text-indent: 0;
+	padding: 1em !important;
+}
+pre {
+	align-self: center;
 }

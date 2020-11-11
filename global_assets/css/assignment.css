@@ -355,3 +355,6 @@ code {
 pre {
 	align-self: center;
 }
+.fullscreen {
+	width: 90%;
+}

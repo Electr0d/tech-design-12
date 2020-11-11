@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="../../../global_assets/css/themes/darkTheme.css">
   <link rel="stylesheet" href="../../../global_assets/css/scrollbar.css">
   <link rel="icon" href="../../../global_assets/img/icon.png">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/dracula.min.css">
+
 </head>
 
 <body>
@@ -26,7 +28,8 @@
       </div>
       <div class="answer">
         <p>
-          Since I didn't have to draw or measure the maze, because the robot moves at an undefined speed, meaning that instead, it was a constant 
+          Since I didn't have to draw or measure the maze, because the robot moves at an undefined speed, meaning that
+          instead, it was a constant
           trial and error, until I got the robot moving through the maze consistently.
         </p>
       </div>
@@ -39,48 +42,55 @@
       </div>
       <div class="answer">
         <p>
-          The Sphero Library works with JavaScript, which is really good for me because I have the most experience in programming with JavaScript and
+          The Sphero Library works with JavaScript, which is really good for me because I have the most experience in
+          programming with JavaScript and
           it is my favourite programming language. So I started out writing my own functions to simplify my workflow.
         </p>
 
 
         <div class="header">Colours 🎨</div>
         <p>
-          I started by writing functions that make me assign the LED colours easily. Then I build on top of it visual effects, like the invert VFX.
+          I started by writing functions that make me assign the LED colours easily. Then I build on top of it visual
+          effects, like the invert VFX.
           I didn't go too far with the idea because I was running out of time and had to start working on the project.
         </p>
-        
+
         <div class="header">Movement</div>
         <p>
-          When I started working on the movement script, I originally wanted to write simple vanilla commands, but, I was on the "end" side of the maze,
-          and since I am really lazy, I decided to write the script in a way that it executes steps in normal order and in reverse order. So that in the
-          end, I could make the program execute the commands in reverse order from the "beginning" to the "end" of the maze.
+          When I started working on the movement script, I originally wanted to write simple vanilla commands, but, I
+          was on the "end" side of the maze,
+          and since I am really lazy, I decided to write the script in a way that it executes steps in normal order and
+          in reverse order. So that in the
+          end, I could make the program execute the commands in reverse order from the "beginning" to the "end" of the
+          maze.
         </p>
         <p>
-          Writing the code is always easier said than done, and since the Canvas included with the Sphero Edu program had very little debug capabilities,
-          it was hard to find the problems of my code and fix them. I had to look through my code numerous times to find each bug. At the end, though, I
+          Writing the code is always easier said than done, and since the Canvas included with the Sphero Edu program
+          had very little debug capabilities,
+          it was hard to find the problems of my code and fix them. I had to look through my code numerous times to find
+          each bug. At the end, though, I
           got the code to work.
         </p>
         <p>
-          The way the code works is that I write steps in a JavaScript object and in each step I define what to do (stop, set direction, roll) and 
+          The way the code works is that I write steps in a JavaScript object and in each step I define what to do
+          (stop, set direction, roll) and
           at what speed if rolling and for how long. The script would go through ever step and execute the command.
         </p>
 
       </div>
     </div>
-    
-    
-        <!-- Question 1 -->
-        <div class="question">
-          <div class="prompt">
-            Source Code 👨‍💻
-          </div>
-          <div class="answer">
-            <p>
-              Here's the source code for the script I made.
-            </p>
-            <textarea class="code" rows="40" columns="20" readonly id="maze-code">
-let rgb = {
+
+
+    <!-- Question 1 -->
+    <div class="question">
+      <div class="prompt">
+        Source Code 👨‍💻
+      </div>
+      <div class="answer">
+        <p>
+          Here's the source code for the script I made.
+        </p>
+        <pre class=" fullscreen"><code class="javascript fullscreen">let rgb = {
   r: 0,
   g: 0,
   b: 0,
@@ -207,8 +217,7 @@ async function maze(maze, direction) {
     // maze code
 
     // executeStep(mazes[maze]);
-    
-    for (let i = 0; i < mazeLength; i++) {
+    for (let i = 0; i < code mazeLength; i++) {
       let step = mazes[maze]['step_' + i];
       
       if (step.type == 'set') {
@@ -226,10 +235,11 @@ async function maze(maze, direction) {
 }
 async function onCollision() {
   await speak('OW!');
-}
-            </textarea>
-          </div>
-        </div>
+}</code></pre>
+
+
+      </div>
+    </div>
 
 
 
@@ -240,6 +250,8 @@ async function onCollision() {
     <a href="../../../index.html"><button id="back">Back to the Home Page</button></a>
   </div>
   <script src="../../../global_assets/js/assignment.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 
 </html>

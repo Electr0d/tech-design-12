@@ -54,6 +54,7 @@ button {
 	background-position-y: top;
 	backdrop-filter: blur(4px);
 	background-attachment: fixed;
+	background-size: cover;
 }
 .slide-header {
 	font-size: 5em;
